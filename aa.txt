@@ -1,0 +1,1 @@
+https://stackoverflow.com/questions/52049644/pyqt-imagepixmap-gets-cropped-when-other-content-changes-width-in-a-widget

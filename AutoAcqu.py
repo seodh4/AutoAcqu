@@ -42,10 +42,11 @@ class VideoThread(QThread):
         self.cam_num = cam_num
     
     def camon(self,cam_width):
-        self.cap = cv2.VideoCapture(self.cam_num,cv2.CAP_V4L2)
+        # self.cap = cv2.VideoCapture(self.cam_num,cv2.CAP_V4L2)
+        self.cap = cv2.VideoCapture(self.cam_num,cv2.CAP_DSHOW)
         if self.cap.isOpened():
             print(self.cap,"Webcam online.")
-            self.cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'))
+            # self.cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'))
             self.cap.set(cv2.CAP_PROP_FRAME_WIDTH,cam_width)
             self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT,720)
             self.cap.set(cv2.CAP_PROP_FPS, 30)
