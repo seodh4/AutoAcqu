@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style type="text/css">
+    thead{
+        background-color: #cecece;
+    }
+    .content{
+        max-width: 800px;
+        margin:auto;
+        padding: 10px;
+    }
+    .header{
+        text-align: center;
+    }
+    .board{
+        width: 100%;
+    }
+    .even_bgcolor{
+        background-color: #e8efff;
+    }
+</style>
+<body>
+    <div class = "content">
+        <div class = "header">
+            <h2>Image DATABASE</h2>
+        </div>
+        
+        <table class = "board">
+            <thead>
+                <tr class="header">
+                    <th style="width:2%;">id</th>
+                    <th style="width:40%">image name</th>
+                    <th style="width:20%">image path</th>
+                    <th style="width:5%">image width</th>
+                    <th style="width:5%">image height</th>
+                    <th style="width:15%">image create date</th>
+                    <th style="width:5%">image size</th>
+                    <th style="width:5%">image type</th>
+                    <th style="width:3%">image form</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for c in board_list %}
+                <tr>
+                    <td>{{c.id}}</td>
+                    <td>{{c.img_name}}</td>
+                    <td>{{c.img_path}}</td>
+                    <td>{{c.img_width}}</td>
+                    <td>{{c.img_height}}</td>
+                    <td>{{c.img_create_date}}</td>
+                    <td>{{c.img_size}}</td>
+                    <td>{{c.img_type}}</td>
+                    <td>{{c.img_form}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        <div class = "header">
+            <h2>Label DATABASE</h2>
+        </div>
+
+        <table class = "label">
+            <thead>
+                <tr class="header">
+                    <th style="width:10%;">label parts</th>
+                    <th style="width:10%">label width</th>
+                    <th style="width:10%">label height</th>
+                    <th style="width:10%">image area</th>
+                    <th style="width:60%">image coordinates</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for c in label_list %}
+                <tr>
+                    <td>{{c.label_parts}}</td>
+                    <td>{{c.label_width}}</td>
+                    <td>{{c.label_height}}</td>
+                    <td>{{c.label_area}}</td>
+                    <td>{{c.label_coordinates}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+</body>
+</html>

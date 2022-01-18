@@ -1,0 +1,43 @@
+{
+	"test1": {
+		"ISP_0": [
+			21,
+			128,
+			128,
+			128,
+			250,
+			128
+		],
+		"ISP_1": [],
+		"fiducial_point": [
+			[
+				204,
+				66,
+				712,
+				582
+			],
+			[
+				0,
+				0,
+				0,
+				0
+			]
+		],
+		"roi_point": [
+			[
+				0,
+				0,
+				0,
+				0
+			],
+			[
+				0,
+				0,
+				0,
+				0
+			]
+		],
+		"fiducial_img_0": "./setting/img/test1_0.jpg",
+		"fiducial_img_1": "./setting/img/test1_1.jpg"
+	}
+}

@@ -1,0 +1,3 @@
+,id,img_name,img_path,img_width,img_height,img_size,img_create_date,img_type,img_form
+0,10,cam0_20220113_164721_5.jpg,./data//test2/img/,1280,720,221024,2022-01-13 16:47:21,jpg,IMT
+1,11,cam0_20220113_164728_3.jpg,./data//test2/img/,1280,720,214039,2022-01-13 16:47:28,jpg,IMT

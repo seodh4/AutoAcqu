@@ -8,20 +8,25 @@ import cv2
 
 detector = cv2.SIFT_create()
 
-def search_feature(frame, roi):
 
+def crop_img(frame, roi):
     imCrop = frame[int(roi[1]):int(roi[1] + roi[3]), int(roi[0]):int(roi[0] + roi[2])]
 
-    im_height = (int(roi[1] + roi[3]) - int(roi[1])) / 2
-    im_width = (int(roi[0] + roi[2]) - int(roi[0])) / 2
-    im_aspect_ratio = im_width / im_height
-    im_area = im_height * im_width
+    return imCrop
 
 
+def search_feature(imCrop):
+
+   
     sub_imCrop = cv2.resize(imCrop, dsize=(0, 0), fx=0.5, fy=0.5, interpolation=cv2.INTER_LINEAR)
     trainImg = cv2.cvtColor(sub_imCrop, cv2.COLOR_BGR2GRAY)
 
     trainKP, trainDesc = detector.detectAndCompute(trainImg, None)
+
+    im_height = imCrop.shape[1]/2
+    im_width = imCrop.shape[0]/2
+    im_aspect_ratio = im_width / im_height
+    im_area = im_height * im_width
 
     return trainKP, trainDesc, trainImg, im_aspect_ratio, im_height, im_width, imCrop, im_area
 
